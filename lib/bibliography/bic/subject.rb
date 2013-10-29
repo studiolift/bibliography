@@ -11,6 +11,13 @@ module Bibliography
         }
       end
 
+      # Class methods
+      def self.all
+        Data.keys.map {|s| Subject.new(s) }
+      end
+
+      # Instance methods
+
       def initialize(code)
         @data = Data[code] || {}
       end
