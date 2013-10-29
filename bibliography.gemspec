@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Mike Robinson"]
   spec.email         = ["mike@studiolift.com"]
   spec.description   = %q{A library of useful tools for books and related standards}
-  spec.summary       = %q{Currently only offers an interface to BIC codes}
+  spec.summary       = %q{Currently only offers an interface to BIC subjects}
   spec.homepage      = "http://github.com/studiolift/bibliography"
   spec.license       = "MIT"
 
