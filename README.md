@@ -18,12 +18,49 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Currently, the library only offers BIC Subjects in a handy interface for traversing through parent and child subjects. This is accessible through:
 
-** Todo
+```ruby
+Bibliography::BIC::Subjects
+```
 
-* Base interface
-* BIC Subjects
+However, Bibliography also offers a convenience method for subjects, defaulting to BIC
+
+```ruby
+Bibliography.subjects
+# Alternatively, pass the symbol name of the standards body
+Bibliography.subjects(:bic)
+```
+
+### Subjects
+
+To obtain a collection of all available subjects:
+
+```ruby
+Bibliography.subjects.all # => [Bibliography::BIC::Subject, ...]
+```
+
+To select a specific subject by code:
+
+```ruby
+subject = Bibliography.subjects.new('AB') # => Bibliography::BIC::Subject
+```
+
+A subject has two key properties, as declared by the BIC Subject standard:
+
+```ruby
+subject.code # => 'AB'
+subject.description # => 'The arts: general issues'
+```
+
+But the real usefulness of this library comes from the traversal methods:
+
+```ruby
+subject.children? # => true
+subject.children # => [Bibliography::BIC::Subject, ...]
+subject.parent? # => true
+subject.parent.code # => 'A'
+```
 
 ## Contributing
 
